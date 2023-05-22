@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: myblogsqlcontainer
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: sanchoy123
+      MYSQL_DATABASE: myblogdb
+    networks:
+      springboot-myblog-docker-net:
+
+  springboot-restful-webservices:
+    container_name: springboot-restful-webservices
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8084:8085"
+    depends_on:
+      - myblogsqlcontainer
+    networks:
+      springboot-myblog-docker-net:
+    restart: on-failure
+
+networks:
+  springboot-myblog-docker-net:

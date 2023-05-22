@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+
+    <Properties>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n</Property>
+        <Property name="APP_LOG_ROOT">logs/</Property>
+    </Properties>
+
+    <!-- Appender Start -->
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+        <!-- File Appender for Info -->
+        <RollingFile name="LogToFileInfoLog" fileName="${APP_LOG_ROOT}/InfoLogs/application-info.log"
+                     filePattern="${APP_LOG_ROOT}/InfoLogs/application-info-%d{yyyy-MM-dd}-%i.log" >
+            <LevelRangeFilter minLevel="INFO" maxLevel="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+
+        <!-- File Appender for Error -->
+        <RollingFile name="LogToFileErrorLog" fileName="${APP_LOG_ROOT}/ErrorLogs/application-error.log"
+                     filePattern="${APP_LOG_ROOT}/ErrorLogs/application-error-%d{yyyy-MM-dd}-%i.log" >
+            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10KB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+    <!-- Appender End -->
+
+    <Loggers>
+
+        <Logger name="com.springboot.blog" additivity="false">
+            <AppenderRef ref="LogToFileInfoLog"/>
+            <AppenderRef ref="LogToFileErrorLog"/>
+        </Logger>
+
+        <Root level="info">
+            <AppenderRef ref="LogToConsole"/>
+        </Root>
+
+    </Loggers>
+</Configuration>

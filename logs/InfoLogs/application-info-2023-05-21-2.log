@@ -1,0 +1,83 @@
+2023-05-21T00:40:49.229+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 25228 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T00:40:49.248+0900 INFO The following 1 profile is active: "test"
+2023-05-21T00:40:52.489+0900 INFO Started PostControllerTests in 3.655 seconds (process running for 5.698)
+2023-05-21T02:04:18.408+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 28424 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T02:04:18.413+0900 INFO The following 1 profile is active: "test"
+2023-05-21T02:04:21.318+0900 INFO Started PostControllerTests in 3.309 seconds (process running for 4.956)
+2023-05-21T02:09:28.011+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 16904 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T02:09:28.020+0900 INFO The following 1 profile is active: "test"
+2023-05-21T02:09:31.255+0900 INFO Started PostControllerTests in 3.627 seconds (process running for 5.312)
+2023-05-21T02:19:57.715+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 19084 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T02:19:57.723+0900 INFO The following 1 profile is active: "test"
+2023-05-21T02:20:01.096+0900 INFO Started PostControllerTests in 3.826 seconds (process running for 5.663)
+2023-05-21T02:20:01.337+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@5a58db42 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-21T02:21:05.307+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 16780 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T02:21:05.317+0900 INFO The following 1 profile is active: "test"
+2023-05-21T02:21:08.315+0900 INFO Started PostControllerTests in 3.404 seconds (process running for 5.105)
+2023-05-21T02:21:08.581+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@3387ab0 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-21T02:23:41.119+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 29140 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T02:23:41.124+0900 INFO The following 1 profile is active: "test"
+2023-05-21T02:23:44.872+0900 INFO Started PostControllerTests in 4.192 seconds (process running for 6.19)
+2023-05-21T02:27:59.109+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 29924 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T02:27:59.115+0900 INFO The following 1 profile is active: "test"
+2023-05-21T02:28:02.924+0900 INFO Started PostControllerTests in 4.336 seconds (process running for 6.511)
+2023-05-21T02:37:21.203+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 23996 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T02:37:21.210+0900 INFO The following 1 profile is active: "test"
+2023-05-21T02:37:24.831+0900 INFO Started PostControllerTests in 4.053 seconds (process running for 5.881)
+2023-05-21T18:35:25.338+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 18176 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:35:25.344+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:37:37.145+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 17384 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:37:37.151+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:38:53.353+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 21324 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:38:53.361+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:39:40.820+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 15924 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:39:40.829+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:40:39.804+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 8824 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:40:39.820+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:41:29.206+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 7540 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:41:29.213+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:42:36.952+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 22920 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:42:36.957+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:42:40.053+0900 INFO Started PostControllerTests in 3.508 seconds (process running for 5.186)
+2023-05-21T18:43:32.628+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 29496 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:43:32.634+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:43:35.654+0900 INFO Started PostControllerTests in 3.421 seconds (process running for 5.123)
+2023-05-21T18:45:06.777+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 10084 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:45:06.782+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:45:09.851+0900 INFO Started PostControllerTests in 3.455 seconds (process running for 5.137)
+2023-05-21T18:46:43.400+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 22320 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:46:43.406+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:46:46.299+0900 INFO Started PostControllerTests in 3.271 seconds (process running for 4.939)
+2023-05-21T18:48:38.140+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 18936 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T18:48:38.146+0900 INFO The following 1 profile is active: "test"
+2023-05-21T18:48:41.119+0900 INFO Started PostControllerTests in 3.361 seconds (process running for 5.021)
+2023-05-21T19:39:46.987+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 15788 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T19:39:46.995+0900 INFO The following 1 profile is active: "dev"
+2023-05-21T19:39:49.947+0900 INFO Started PostControllerTests in 3.349 seconds (process running for 4.979)
+2023-05-21T19:40:32.107+0900 INFO Starting SpringbootBlogRestApiApplication using Java 17.0.6 with PID 11588 (C:\DEV\TUT\springboot-blog-rest-api\target\classes started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T19:40:32.112+0900 INFO The following 1 profile is active: "dev"
+2023-05-21T19:40:39.441+0900 INFO Started SpringbootBlogRestApiApplication in 7.73 seconds (process running for 8.833)
+2023-05-21T19:40:46.777+0900 INFO Method: POST --- Path: /api/v1/auth/login --- Header: org.springframework.security.web.firewall.StrictHttpFirewall$StrictFirewalledRequest$2@11a89839 --- Request Body: {"usernameOrEmail":"admin@gmail.com","password":""}
+2023-05-21T20:57:24.144+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 21812 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T20:57:24.153+0900 INFO The following 1 profile is active: "test"
+2023-05-21T20:57:47.251+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 4432 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T20:57:47.258+0900 INFO The following 1 profile is active: "test"
+2023-05-21T21:05:04.566+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 10588 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T21:05:04.573+0900 INFO The following 1 profile is active: "test"
+2023-05-21T21:05:07.703+0900 INFO Started PostControllerTests in 3.533 seconds (process running for 5.166)
+2023-05-21T21:06:01.596+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 26892 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T21:06:01.602+0900 INFO The following 1 profile is active: "test"
+2023-05-21T21:06:04.775+0900 INFO Started PostControllerTests in 3.577 seconds (process running for 5.251)
+2023-05-21T21:08:11.911+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 25196 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T21:08:11.925+0900 INFO The following 1 profile is active: "test"
+2023-05-21T21:08:15.114+0900 INFO Started PostControllerTests in 3.582 seconds (process running for 5.297)
+2023-05-21T21:09:00.071+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 25084 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T21:09:00.078+0900 INFO The following 1 profile is active: "test"
+2023-05-21T21:09:03.421+0900 INFO Started PostControllerTests in 3.816 seconds (process running for 5.54)
+2023-05-21T21:11:35.857+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 27144 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T21:11:35.868+0900 INFO The following 1 profile is active: "test"
+2023-05-21T21:11:38.824+0900 INFO Started PostControllerTests in 3.365 seconds (process running for 5.011)
+2023-05-21T21:12:10.117+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 1900 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
+2023-05-21T21:12:10.121+0900 INFO The following 1 profile is active: "test"
+2023-05-21T21:12:13.824+0900 INFO Started PostControllerTests in 4.163 seconds (process running for 6.198)
+2023-05-21T21:13:33.723+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 17100 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\springboot-blog-rest-api)
