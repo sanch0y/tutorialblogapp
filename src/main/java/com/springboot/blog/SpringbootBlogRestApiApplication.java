@@ -48,8 +48,8 @@ public class SpringbootBlogRestApiApplication implements CommandLineRunner{
 		SpringApplication.run(SpringbootBlogRestApiApplication.class, args);
 	}
 
-	@Autowired
-	private RoleRepository roleRepository;
+//	@Autowired
+//	private RoleRepository roleRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
