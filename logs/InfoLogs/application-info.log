@@ -1,7 +1,7 @@
-2023-05-24T17:46:41.871+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@2212e291 --- Request Body: {"id":0,"title":"PostTitle1","description":"","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-24T17:46:41.909+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@687fd6e --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-24T17:46:41.937+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@64af5454 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":null,"comments":null,"categoryId":1}
-2023-05-24T17:46:41.954+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@ff8e36d --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"","comments":null,"categoryId":1}
-2023-05-24T17:46:41.976+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@26d445e9 --- Request Body: {"id":0,"title":"","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-24T17:46:41.996+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@7f94541b --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-24T17:46:42.013+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@6c4d0224 --- Request Body: {"id":0,"title":"PostTitle1","description":"D","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T01:58:00.652+0900 INFO The following 1 profile is active: "test"
+2023-05-26T01:58:03.643+0900 INFO Started PostControllerTests in 3.392 seconds (process running for 5.014)
+2023-05-26T01:58:03.747+0900 INFO Method: GET --- Path: /api/posts/2 --- Header: java.util.Collections$3@4ce18cec
+2023-05-26T01:59:23.911+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 10736 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-26T01:59:23.920+0900 INFO The following 1 profile is active: "test"
+2023-05-26T01:59:27.316+0900 INFO Started PostControllerTests in 3.808 seconds (process running for 5.597)
+2023-05-26T01:59:27.425+0900 INFO Method: GET --- Path: /api/posts/2 --- Header: java.util.Collections$3@32428874

@@ -3,10 +3,12 @@ package com.springboot.blog.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springboot.blog.dto.LoginDto;
 import com.springboot.blog.dto.PostDto;
+import com.springboot.blog.dto.PostResponse;
 import com.springboot.blog.entity.Category;
 import com.springboot.blog.entity.Post;
 import com.springboot.blog.entity.Role;
 import com.springboot.blog.entity.User;
+import com.springboot.blog.exception.ResourceNotFoundException;
 import com.springboot.blog.repository.RoleRepository;
 import com.springboot.blog.repository.UserRepository;
 import com.springboot.blog.security.JwtAuthenticationFilter;
@@ -236,16 +238,16 @@ public class PostControllerTests
                 .willReturn(responseDto);
 
         // when - action or behaviour that we are going to test
-        ResultActions result = mockMvc.perform(post("/api/v1/posts")
+        ResultActions response = mockMvc.perform(post("/api/v1/posts")
                 .header("Authorization", jwtToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDto)));
 
         // then - verify the output
-        result.andDo(MockMvcResultHandlers.print())
+        response.andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError())
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
-                .andExpect(result1 -> result1.getResolvedException().getMessage().equals(validationErrorString))
+                .andExpect(result -> result.getResolvedException().getMessage().equals(validationErrorString))
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
@@ -265,16 +267,16 @@ public class PostControllerTests
                 .willReturn(responseDto);
 
         // when - action or behaviour that we are going to test
-        ResultActions result = mockMvc.perform(post("/api/v1/posts")
+        ResultActions response = mockMvc.perform(post("/api/v1/posts")
                 .header("Authorization", jwtToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDto)));
 
         // then - verify the output
-        result.andDo(MockMvcResultHandlers.print())
+        response.andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError())
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
-                .andExpect(result1 -> result1.getResolvedException().getMessage().equals(validationErrorString))
+                .andExpect(result -> result.getResolvedException().getMessage().equals(validationErrorString))
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
@@ -294,16 +296,16 @@ public class PostControllerTests
                 .willReturn(responseDto);
 
         // when - action or behaviour that we are going to test
-        ResultActions result = mockMvc.perform(post("/api/v1/posts")
+        ResultActions response = mockMvc.perform(post("/api/v1/posts")
                 .header("Authorization", jwtToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDto)));
 
         // then - verify the output
-        result.andDo(MockMvcResultHandlers.print())
+        response.andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError())
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
-                .andExpect(result1 -> result1.getResolvedException().getMessage().equals(validationErrorString))
+                .andExpect(result -> result.getResolvedException().getMessage().equals(validationErrorString))
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
@@ -324,16 +326,16 @@ public class PostControllerTests
                 .willReturn(responseDto);
 
         // when - action or behaviour that we are going to test
-        ResultActions result = mockMvc.perform(post("/api/v1/posts")
+        ResultActions response = mockMvc.perform(post("/api/v1/posts")
                 .header("Authorization", jwtToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDto)));
 
         // then - verify the output
-        result.andDo(MockMvcResultHandlers.print())
+        response.andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError())
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
-                .andExpect(result1 -> result1.getResolvedException().getMessage().equals(validationErrorString))
+                .andExpect(result -> result.getResolvedException().getMessage().equals(validationErrorString))
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
@@ -353,16 +355,16 @@ public class PostControllerTests
                 .willReturn(responseDto);
 
         // when - action or behaviour that we are going to test
-        ResultActions result = mockMvc.perform(post("/api/v1/posts")
+        ResultActions response = mockMvc.perform(post("/api/v1/posts")
                 .header("Authorization", jwtToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDto)));
 
         // then - verify the output
-        result.andDo(MockMvcResultHandlers.print())
+        response.andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError())
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
-                .andExpect(result1 -> result1.getResolvedException().getMessage().equals(validationErrorString))
+                .andExpect(result -> result.getResolvedException().getMessage().equals(validationErrorString))
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
@@ -382,16 +384,16 @@ public class PostControllerTests
                 .willReturn(responseDto);
 
         // when - action or behaviour that we are going to test
-        ResultActions result = mockMvc.perform(post("/api/v1/posts")
+        ResultActions response = mockMvc.perform(post("/api/v1/posts")
                 .header("Authorization", jwtToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDto)));
 
         // then - verify the output
-        result.andDo(MockMvcResultHandlers.print())
+        response.andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError())
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
-                .andExpect(result1 -> result1.getResolvedException().getMessage().equals(validationErrorString))
+                .andExpect(result -> result.getResolvedException().getMessage().equals(validationErrorString))
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
@@ -401,9 +403,6 @@ public class PostControllerTests
     {
         requestDto.setContent("C");
 
-//        String validationErrorString = "Invalid request content.";
-//        String specificValidationError = "{\"description\":\"Post description must have at least 10 characters\"}";
-
         //given - precondition or setup
         String jwtToken = "Bearer " + "Test Token";
 
@@ -411,13 +410,13 @@ public class PostControllerTests
                 .willReturn(responseDto);
 
         // when - action or behaviour that we are going to test
-        ResultActions result = mockMvc.perform(post("/api/v1/posts")
+        ResultActions response = mockMvc.perform(post("/api/v1/posts")
                 .header("Authorization", jwtToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDto)));
 
         // then - verify the output
-        result.andDo(MockMvcResultHandlers.print())
+        response.andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().isCreated())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id", CoreMatchers.is((int) responseDto.getId())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.title", CoreMatchers.is(responseDto.getTitle())))
@@ -442,21 +441,21 @@ public class PostControllerTests
                 .willReturn(responseDto);
 
         // when - action or behaviour that we are going to test
-        ResultActions result = mockMvc.perform(post("/api/v1/posts")
+        ResultActions response = mockMvc.perform(post("/api/v1/posts")
                 .header("Authorization", jwtToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDto)));
 
         // then - verify the output
-        result.andDo(MockMvcResultHandlers.print())
+        response.andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError())
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
-                .andExpect(result1 -> result1.getResolvedException().getMessage().equals(validationErrorString))
+                .andExpect(result -> result.getResolvedException().getMessage().equals(validationErrorString))
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
-    @DisplayName("Controller_Logic_09")
-    @Test //9//BDD//Negative//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
+    @DisplayName("Controller_Logic_10")
+    @Test //10//BDD//Negative//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
     public void givenPostDtoObjectWithNullContent_whenSavePost_thenReturnBadRequestError() throws Exception
     {
         requestDto.setContent(null);
@@ -471,23 +470,23 @@ public class PostControllerTests
                 .willReturn(responseDto);
 
         // when - action or behaviour that we are going to test
-        ResultActions result = mockMvc.perform(post("/api/v1/posts")
+        ResultActions response = mockMvc.perform(post("/api/v1/posts")
                 .header("Authorization", jwtToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDto)));
 
         // then - verify the output
-        result.andDo(MockMvcResultHandlers.print())
+        response.andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError())
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
-                .andExpect(result1 -> result1.getResolvedException().getMessage().equals(validationErrorString))
+                .andExpect(result -> result.getResolvedException().getMessage().equals(validationErrorString))
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
 
     @Disabled("This test case is ignored for now.")
-    @DisplayName("Controller_Logic_10")
-    @Test //2//BDD//Negative//This test case will work when commenting the line "@AutoConfigureMockMvc(addFilters = false)" on the top of the class
+    @DisplayName("Controller_Logic_11")
+    @Test //11//BDD//Negative//This test case will work when commenting the line "@AutoConfigureMockMvc(addFilters = false)" on the top of the class
     public void givenPostDtoObjectAndNoJwtToken_whenSavePost_thenReturn403Forbidden() throws Exception
     {
         //given - precondition or setup
@@ -503,21 +502,156 @@ public class PostControllerTests
         response.andExpect(MockMvcResultMatchers.status().isForbidden());
     }
 
-    @DisplayName("Controller_Logic_11")
-    @Test //3//BDD//Positive//This test case will work when remove commenting for the line "@AutoConfigureMockMvc(addFilters = false)" on the top of the class
+    @DisplayName("Controller_Logic_12")
+    @Test //12//BDD//Positive//This test case will work when remove commenting for the line "@AutoConfigureMockMvc(addFilters = false)" on the top of the class
     public void givenPostDtoList_whenGetAllPosts_thenReturnListOfPostObjects() throws Exception
     {
         //given - precondition or setup
-        given(postService.createPost(ArgumentMatchers.any(PostDto.class)))
+        int pageNo = 0;
+        int pageSize = 10;
+        String sortBy = "id";
+        String sortDir = "asc";
+        int totalElements = 3;
+        int totalPages = 1;
+        boolean lastPage = true;
+
+        List<PostDto> expectedPostDtos = makePostDtoList(totalElements);
+
+        PostResponse expectedResponse = PostResponse.builder()
+                .content(expectedPostDtos)
+                .pageNo(pageNo)
+                .pageSize(pageSize)
+                .totalElement(totalElements)
+                .totalPage(totalPages)
+                .last(lastPage)
+                .build();
+
+        String jwtToken = "Bearer " + "Test Token";
+
+        //given - precondition or setup
+        given(postService.getAllPosts(pageNo, pageSize, sortBy, sortDir))
+                .willReturn(expectedResponse);
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(get("/api/v1/posts")
+                .header("Authorization", jwtToken)
+                .contentType(MediaType.APPLICATION_JSON));
+
+        //then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.size()", CoreMatchers.is(expectedResponse.getContent().size())))
+
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content[0].id", CoreMatchers.is((int) expectedResponse.getContent().get(0).getId())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content[0].title", CoreMatchers.is(expectedResponse.getContent().get(0).getTitle())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content[0].description", CoreMatchers.is(expectedResponse.getContent().get(0).getDescription())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content[0].content", CoreMatchers.is(expectedResponse.getContent().get(0).getContent())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content[0].categoryId", CoreMatchers.is((int) expectedResponse.getContent().get(0).getCategoryId())))
+
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content[2].id", CoreMatchers.is((int) expectedResponse.getContent().get(2).getId())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content[2].title", CoreMatchers.is(expectedResponse.getContent().get(2).getTitle())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content[2].description", CoreMatchers.is(expectedResponse.getContent().get(2).getDescription())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content[2].content", CoreMatchers.is(expectedResponse.getContent().get(2).getContent())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content[2].categoryId", CoreMatchers.is((int) expectedResponse.getContent().get(2).getCategoryId())))
+
+                .andExpect(MockMvcResultMatchers.jsonPath("$.pageNo", CoreMatchers.is(expectedResponse.getPageNo())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.pageSize", CoreMatchers.is(expectedResponse.getPageSize())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.totalElement", CoreMatchers.is((int) expectedResponse.getTotalElement())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.totalPage", CoreMatchers.is(expectedResponse.getTotalPage())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.last", CoreMatchers.is(expectedResponse.isLast())));
+    }
+
+    @DisplayName("Controller_Logic_13")
+    @Test //13//BDD//Negative//This test case will work when uncommenting the line "@AutoConfigureMockMvc(addFilters = false)" on the top of the class
+    public void givenPostDtoList_whenGetAllPosts_thenReturnEmptyList() throws Exception
+    {
+        //given - precondition or setup
+        int pageNo = 0;
+        int pageSize = 1;
+        String sortBy = "id";
+        String sortDir = "asc";
+        int totalElements = 0;
+        int totalPages = 1;
+        boolean lastPage = true;
+
+        List<PostDto> expectedPostDtos = makePostDtoList(totalElements);
+
+        PostResponse expectedResponse = PostResponse.builder()
+                .content(expectedPostDtos)
+                .pageNo(pageNo)
+                .pageSize(pageSize)
+                .totalElement(totalElements)
+                .totalPage(totalPages)
+                .last(lastPage)
+                .build();
+
+        String jwtToken = "Bearer " + "Test Token";
+
+        //given - precondition or setup
+        given(postService.getAllPosts(pageNo, pageSize, sortBy, sortDir))
+                .willReturn(expectedResponse);
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(get("/api/v1/posts")
+                .header("Authorization", jwtToken)
+                .contentType(MediaType.APPLICATION_JSON));
+
+        //then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(result -> result.getResponse().getContentAsString().equals(""));
+    }
+
+    @DisplayName("Controller_Logic_14")
+    @Test //14//BDD//Positive//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
+    public void givenPostIdAndPostDtoObject_whenSavePost_thenReturnSavedPost() throws Exception
+    {
+        long postId = 1;
+
+        //given - precondition or setup
+        String jwtToken = "Bearer " + "Test Token";
+
+        given(postService.getPostById(postId))
                 .willReturn(responseDto);
 
         // when - action or behaviour that we are going to test
-        ResultActions response = mockMvc.perform(post("/api/v1/posts")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(requestDto)));
+        ResultActions response = mockMvc.perform(get("/api/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .header("X-API-VERSION", "1"));
 
-        //then - verify the output
-        response.andExpect(MockMvcResultMatchers.status().isForbidden());
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id", CoreMatchers.is((int) responseDto.getId())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.title", CoreMatchers.is(responseDto.getTitle())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.description", CoreMatchers.is(responseDto.getDescription())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content", CoreMatchers.is(responseDto.getContent())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.categoryId", CoreMatchers.is((int) responseDto.getCategoryId())));
+    }
+
+    @DisplayName("Controller_Logic_15")
+    @Test //15//BDD//Negative//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
+    public void givenPostIdAndPostDtoObject_whenSavePost_thenReturnNotFoundError() throws Exception
+    {
+        long postId = 2;
+
+        //given - precondition or setup
+        String jwtToken = "Bearer " + "Test Token";
+
+        given(postService.getPostById(postId))
+                .willThrow(new ResourceNotFoundException("Post", "Id", postId));
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(get("/api/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .header("X-API-VERSION", "1")
+                .contentType(MediaType.APPLICATION_JSON));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isNotFound())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Post not found with Id : '"+postId+"'")));
     }
 
     /*Utility Methods Onwards*/

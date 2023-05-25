@@ -82,3 +82,6 @@
 2023-05-24T17:46:41.977+0900 ERROR title_______Post title must have at least 4 characters
 2023-05-24T17:46:41.978+0900 ERROR title_______must not be empty
 2023-05-24T17:46:42.015+0900 ERROR description_______Post description must have at least 10 characters
+2023-05-26T01:54:45.529+0900 ERROR Post not found with Id : '2'_______uri=/api/posts/2
+2023-05-26T01:58:03.775+0900 ERROR Post not found with Id : '2'_______uri=/api/posts/2
+2023-05-26T01:59:27.462+0900 ERROR Post not found with Id : '2'_______uri=/api/posts/2
