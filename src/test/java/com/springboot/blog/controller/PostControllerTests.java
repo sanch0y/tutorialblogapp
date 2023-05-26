@@ -605,7 +605,7 @@ public class PostControllerTests
 
     @DisplayName("Controller_Logic_14")
     @Test //14//BDD//Positive//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
-    public void givenPostIdAndPostDtoObject_whenSavePost_thenReturnSavedPost() throws Exception
+    public void givenPostIdAndPostDtoObject_whenGetPostById_thenReturnSpecificPost() throws Exception
     {
         long postId = 1;
 
@@ -632,7 +632,7 @@ public class PostControllerTests
 
     @DisplayName("Controller_Logic_15")
     @Test //15//BDD//Negative//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
-    public void givenPostIdAndPostDtoObject_whenSavePost_thenReturnNotFoundError() throws Exception
+    public void givenPostIdAndPostDtoObject_whenGetPostById_thenReturnNotFoundError() throws Exception
     {
         long postId = 2;
 
@@ -654,27 +654,139 @@ public class PostControllerTests
                 .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Post not found with Id : '"+postId+"'")));
     }
 
-    /*Utility Methods Onwards*/
-    private List<Post> makePostList(int instances)
+    @DisplayName("Controller_Logic_16")
+    @Test //16//BDD//Positive//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
+    public void givenPostIdAndPostDtoObject_whenUpdatePost_thenReturnUpdatedPost() throws Exception
     {
-        List<Post> posts = new ArrayList<>();
+        long postId = 1;
 
-        for(int i = 1; i <= instances; i++)
-        {
-            Post post = Post.builder()
-                    .id(Long.valueOf(i))
-                    .title("PostTitle"+i)
-                    .description("PostDescription"+i)
-                    .content("PostContent"+i)
-                    .category(category)
-                    .build();
+        category = Category.builder()
+                .id(2)
+                .name("category2")
+                .description("description2")
+                .build();
 
-            posts.add(post);
-        }
+        requestDto = PostDto.builder()
+                .title("UpdatedPostTitle1")
+                .description("UpdatedPostDescription1")
+                .content("UpdatedPostContent1")
+                .categoryId(category.getId())
+                .build();
 
-        return posts;
+        responseDto = PostDto.builder()
+                .id(1)
+                .title("UpdatedPostTitle1")
+                .description("UpdatedPostTitle1")
+                .content("UpdatedPostTitle1")
+                .categoryId(category.getId())
+                .build();
+
+        //given - precondition or setup
+        String jwtToken = "Bearer " + "Test Token";
+
+        given(postService.updatePost(postId, requestDto))
+                .willReturn(responseDto);
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(put("/api/v1/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(requestDto)));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id", CoreMatchers.is((int) postId)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.title", CoreMatchers.is(responseDto.getTitle())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.description", CoreMatchers.is(responseDto.getDescription())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content", CoreMatchers.is(responseDto.getContent())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.categoryId", CoreMatchers.is((int) responseDto.getCategoryId())));
     }
 
+    @DisplayName("Controller_Logic_17")
+    @Test //17//BDD//Negative//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
+    public void givenPostIdAndPostDtoObject_whenUpdatePost_thenReturnNotFoundError() throws Exception
+    {
+        long postId = 2;
+
+        category = Category.builder()
+                .id(2)
+                .name("category2")
+                .description("description2")
+                .build();
+
+        requestDto = PostDto.builder()
+                .title("UpdatedPostTitle1")
+                .description("UpdatedPostDescription1")
+                .content("UpdatedPostContent1")
+                .categoryId(category.getId())
+                .build();
+
+        //given - precondition or setup
+        String jwtToken = "Bearer " + "Test Token";
+
+        given(postService.updatePost(postId, requestDto))
+                .willThrow(new ResourceNotFoundException("Post", "Id", postId));
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(put("/api/v1/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(requestDto)));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isNotFound())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Post not found with Id : '"+postId+"'")));
+    }
+
+    @DisplayName("Controller_Logic_18")
+    @Test //18//BDD//Positive//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
+    public void givenPostId_whenDeletePostById_thenReturnDeletedMessage() throws Exception
+    {
+        long postId = 1;
+        String dltConfirmationMsg = String.format("Post with id %s was deleted successfully", postId);
+
+        //given - precondition or setup
+        String jwtToken = "Bearer " + "Test Token";
+
+        given(postService.deletePost(postId))
+                .willReturn(dltConfirmationMsg);
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(delete("/api/v1/posts/{id}", postId)
+                .header("Authorization", jwtToken));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(result -> result.getResponse().getContentAsString().equals(dltConfirmationMsg));
+    }
+
+    @DisplayName("Controller_Logic_19")
+    @Test //19//BDD//Negative//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
+    public void givenPostId_whenDeletePostById_thenReturnNotFoundError() throws Exception
+    {
+        long postId = 1;
+        String dltConfirmationMsg = String.format("Post with id %s was deleted successfully", postId);
+
+        //given - precondition or setup
+        String jwtToken = "Bearer " + "Test Token";
+
+        given(postService.deletePost(postId))
+                .willThrow(new ResourceNotFoundException("Post", "Id", postId));
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(delete("/api/v1/posts/{id}", postId)
+                .header("Authorization", jwtToken));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isNotFound())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Post not found with Id : '"+postId+"'")));
+    }
+
+    /*Utility Methods Onwards*/
     private List<PostDto> makePostDtoList(int instances)
     {
         List<PostDto> postDtos = new ArrayList<>();

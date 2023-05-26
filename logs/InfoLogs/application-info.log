@@ -1,7 +1,51 @@
-2023-05-26T01:58:00.652+0900 INFO The following 1 profile is active: "test"
-2023-05-26T01:58:03.643+0900 INFO Started PostControllerTests in 3.392 seconds (process running for 5.014)
-2023-05-26T01:58:03.747+0900 INFO Method: GET --- Path: /api/posts/2 --- Header: java.util.Collections$3@4ce18cec
-2023-05-26T01:59:23.911+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 10736 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-26T01:59:23.920+0900 INFO The following 1 profile is active: "test"
-2023-05-26T01:59:27.316+0900 INFO Started PostControllerTests in 3.808 seconds (process running for 5.597)
-2023-05-26T01:59:27.425+0900 INFO Method: GET --- Path: /api/posts/2 --- Header: java.util.Collections$3@32428874
+2023-05-26T10:45:22.152+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@51dbed72 --- Request Body: {"id":0,"title":null,"description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:22.192+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@94aeba1 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"C","comments":null,"categoryId":1}
+2023-05-26T10:45:22.209+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@ff8e36d --- Request Body: {"id":0,"title":"PostTitle1","description":null,"content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:22.232+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@26d445e9 --- Request Body: {"id":0,"title":"PostTitle1","description":"","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:22.274+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@183a508b
+2023-05-26T10:45:22.309+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@6074d638 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":null,"comments":null,"categoryId":1}
+2023-05-26T10:45:22.324+0900 INFO Method: PUT --- Path: /api/v1/posts/1 --- Header: java.util.Collections$3@126ff1a1 --- Request Body: {"id":0,"title":"UpdatedPostTitle1","description":"UpdatedPostDescription1","content":"UpdatedPostContent1","comments":null,"categoryId":2}
+2023-05-26T10:45:22.339+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@6ba08a09
+2023-05-26T10:45:22.352+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@3b839f68 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"","comments":null,"categoryId":1}
+2023-05-26T10:45:22.369+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@18f27a81 --- Request Body: {"id":0,"title":"","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:22.388+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@7112b21a --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:22.400+0900 INFO Method: GET --- Path: /api/posts/2 --- Header: java.util.Collections$3@1041ebba
+2023-05-26T10:45:22.414+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@1c7744c1 --- Request Body: {"id":0,"title":"PostTitle1","description":"D","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:33.946+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 15612 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-26T10:45:33.950+0900 INFO The following 1 profile is active: "test"
+2023-05-26T10:45:37.356+0900 INFO Started PostControllerTests in 3.823 seconds (process running for 5.758)
+2023-05-26T10:45:37.565+0900 INFO Method: PUT --- Path: /api/v1/posts/2 --- Header: java.util.Collections$3@7e1fb22c --- Request Body: {"id":0,"title":"UpdatedPostTitle1","description":"UpdatedPostDescription1","content":"UpdatedPostContent1","comments":null,"categoryId":2}
+2023-05-26T10:45:37.784+0900 INFO Method: GET --- Path: /api/posts/1 --- Header: java.util.Collections$3@afb7b03
+2023-05-26T10:45:37.818+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@6fc6f68f --- Request Body: {"id":0,"title":"P","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:37.844+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@3731e8b6 --- Request Body: {"id":0,"title":null,"description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:37.870+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@6d5de79a --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"C","comments":null,"categoryId":1}
+2023-05-26T10:45:37.885+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@16f8df70 --- Request Body: {"id":0,"title":"PostTitle1","description":null,"content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:37.900+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@2651e783 --- Request Body: {"id":0,"title":"PostTitle1","description":"","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:37.944+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@94aeba1
+2023-05-26T10:45:37.997+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@75adb1c0 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":null,"comments":null,"categoryId":1}
+2023-05-26T10:45:38.017+0900 INFO Method: PUT --- Path: /api/v1/posts/1 --- Header: java.util.Collections$3@40d370fa --- Request Body: {"id":0,"title":"UpdatedPostTitle1","description":"UpdatedPostDescription1","content":"UpdatedPostContent1","comments":null,"categoryId":2}
+2023-05-26T10:45:38.030+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@757c685d
+2023-05-26T10:45:38.042+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@1ce57bbb --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"","comments":null,"categoryId":1}
+2023-05-26T10:45:38.057+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@362c48c --- Request Body: {"id":0,"title":"","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:38.071+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@2914a328 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:38.082+0900 INFO Method: GET --- Path: /api/posts/2 --- Header: java.util.Collections$3@26291192
+2023-05-26T10:45:38.110+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@18f27a81 --- Request Body: {"id":0,"title":"PostTitle1","description":"D","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:47.961+0900 INFO Starting PostControllerTests using Java 17.0.6 with PID 23664 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-26T10:45:47.965+0900 INFO The following 1 profile is active: "test"
+2023-05-26T10:45:51.371+0900 INFO Started PostControllerTests in 3.863 seconds (process running for 5.909)
+2023-05-26T10:45:51.593+0900 INFO Method: PUT --- Path: /api/v1/posts/2 --- Header: java.util.Collections$3@2524d07a --- Request Body: {"id":0,"title":"UpdatedPostTitle1","description":"UpdatedPostDescription1","content":"UpdatedPostContent1","comments":null,"categoryId":2}
+2023-05-26T10:45:51.802+0900 INFO Method: GET --- Path: /api/posts/1 --- Header: java.util.Collections$3@5e34a84b
+2023-05-26T10:45:51.840+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@75c0cd39 --- Request Body: {"id":0,"title":"P","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:51.875+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@62e99458 --- Request Body: {"id":0,"title":null,"description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:51.901+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@5a96f3cb --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"C","comments":null,"categoryId":1}
+2023-05-26T10:45:51.915+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@14d298d6 --- Request Body: {"id":0,"title":"PostTitle1","description":null,"content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:51.934+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@f6cde7e --- Request Body: {"id":0,"title":"PostTitle1","description":"","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:51.969+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@27048db3
+2023-05-26T10:45:52.009+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@1ce57bbb --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":null,"comments":null,"categoryId":1}
+2023-05-26T10:45:52.038+0900 INFO Method: PUT --- Path: /api/v1/posts/1 --- Header: java.util.Collections$3@6afaf27 --- Request Body: {"id":0,"title":"UpdatedPostTitle1","description":"UpdatedPostDescription1","content":"UpdatedPostContent1","comments":null,"categoryId":2}
+2023-05-26T10:45:52.052+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@362c48c
+2023-05-26T10:45:52.068+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@1983a4e4 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"","comments":null,"categoryId":1}
+2023-05-26T10:45:52.083+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@26291192 --- Request Body: {"id":0,"title":"","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:52.096+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@44948ac6 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-26T10:45:52.109+0900 INFO Method: GET --- Path: /api/posts/2 --- Header: java.util.Collections$3@3bc3d70e
+2023-05-26T10:45:52.123+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@6074d638 --- Request Body: {"id":0,"title":"PostTitle1","description":"D","content":"PostContent1","comments":null,"categoryId":1}
