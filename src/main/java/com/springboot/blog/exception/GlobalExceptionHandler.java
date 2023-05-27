@@ -7,6 +7,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -59,6 +60,21 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler
         return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
     }
 
+    @ExceptionHandler(AuthenticationCredentialsNotFoundException.class)
+    public ResponseEntity<ErrorDetails> handleAuthenticationCredentialNOtFoundException(
+            Exception exception,
+            WebRequest webRequest
+    )
+    {
+        ErrorDetails errorDetails = new ErrorDetails(
+                new Date(),
+                exception.getMessage(),
+                webRequest.getDescription(false)
+        );
+        LOGGER.error(errorDetails.getMessage() + "_______" + errorDetails.getDetails());
+        return new ResponseEntity<>(errorDetails, HttpStatus.FORBIDDEN);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorDetails> handleGlobalException(
             Exception exception,
@@ -84,10 +100,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler
     {
         Map<String, String> errors = new HashMap<>();
         ex.getBindingResult().getAllErrors().forEach(error -> {
-             String fieldName = ((FieldError)error).getField();
-             String errorMessage = error.getDefaultMessage();
+            String fieldName = ((FieldError)error).getField();
+            String errorMessage = error.getDefaultMessage();
 
-             errors.put(fieldName, errorMessage);
+            errors.put(fieldName, errorMessage);
             LOGGER.error(fieldName + "_______" + errorMessage);
         });
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);

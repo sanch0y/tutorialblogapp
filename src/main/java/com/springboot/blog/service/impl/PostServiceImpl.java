@@ -7,6 +7,7 @@ import com.springboot.blog.entity.Post;
 import com.springboot.blog.exception.ResourceNotFoundException;
 import com.springboot.blog.repository.CategoryRepository;
 import com.springboot.blog.repository.PostRepository;
+import com.springboot.blog.service.AuthService;
 import com.springboot.blog.service.PostService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,10 @@ public class PostServiceImpl implements PostService {
     private PostRepository postRepository;
     @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    private AuthService authService;
+
     @Autowired
     private ModelMapper modelMapper;
 
@@ -33,7 +38,7 @@ public class PostServiceImpl implements PostService {
     public PostDto createPost(PostDto postDto)
     {
         Category category = categoryRepository.findById(postDto.getCategoryId())
-                .orElseThrow(() -> new ResourceNotFoundException("Catogory", "id", postDto.getCategoryId()));
+                .orElseThrow(() -> new ResourceNotFoundException("Category", "id", postDto.getCategoryId()));
 
         Post post = dtoToEntity(postDto);
         post.setCategory(category);
@@ -78,7 +83,7 @@ public class PostServiceImpl implements PostService {
         Post postToUpdate = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
 
         Category category = categoryRepository.findById(postDto.getCategoryId())
-                .orElseThrow(() -> new ResourceNotFoundException("Catogory", "id", postDto.getCategoryId()));
+                .orElseThrow(() -> new ResourceNotFoundException("Category", "id", postDto.getCategoryId()));
 
         postToUpdate.setTitle(postDto.getTitle());
         postToUpdate.setContent(postDto.getContent());

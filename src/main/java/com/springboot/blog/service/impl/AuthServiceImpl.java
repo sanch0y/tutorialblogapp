@@ -83,4 +83,31 @@ public class AuthServiceImpl implements AuthService
 
         return "User registered successfully";
     }
+
+    public String registerAdmin(RegisterDto registerAdminDto)
+    {
+        if(userRepository.existsByUsername(registerAdminDto.getUsername()))
+            throw new BlogApiException(HttpStatus.BAD_REQUEST, "Username already exists!");
+
+        if(userRepository.existsByEmail(registerAdminDto.getEmail()))
+            throw new BlogApiException(HttpStatus.BAD_REQUEST, "Email already exists");
+
+        User admin = new User();
+        admin.setName(registerAdminDto.getName());
+        admin.setUsername(registerAdminDto.getUsername());
+        admin.setEmail(registerAdminDto.getEmail());
+        admin.setPassword(passwordEncoder.encode(registerAdminDto.getPassword()));
+
+        Set<Role> roles = new HashSet<>();
+        Role adminRole = roleRepository.findByName("ROLE_ADMIN").get();
+        LOGGER.info("Current Role Id : "+ adminRole.getId());
+        LOGGER.info("Current Role Name : "+ adminRole.getName());
+
+        roles.add(adminRole);
+        admin.setRoles(roles);
+
+        userRepository.save(admin);
+
+        return "Admin registered successfully";
+    }
 }

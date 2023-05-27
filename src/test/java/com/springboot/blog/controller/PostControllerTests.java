@@ -153,52 +153,16 @@ public class PostControllerTests
     @Test //1//BDD//Positive//This test case will work when the line "@AutoConfigureMockMvc(addFilters = false)" will remain uncommented at the top of the class
     public void givenPostDtoObjectWithTestJwtToken_whenSavePost_thenReturnPostObject() throws Exception
     {
-//        Date now = new Date();
-//        Key key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(SECRET));
-//
-//        String jwtToken = "Bearer "+ Jwts.builder()
-//                .setSubject("admin@gmail.com")
-//                .setIssuedAt(now)
-//                .setExpiration(new Date(now.getTime() + EXPIRATION_MS))
-//                .signWith(key)
-//                .compact();
-//
-//        given(jwtTokenProvider.validateToken(jwtToken)).willReturn(true);
-//        given(jwtTokenProvider.getUsername(jwtToken)).willReturn("admin@gmail.com");
-//
-//        UserDetails userDetails = User
-//                .withUsername("admin@gmail.com")
-//                .password("admin123")
-//                .authorities(new SimpleGrantedAuthority("ROLE_ADMIN"))
-//                .build();
-//        given(userDetailsService.loadUserByUsername("admin@gmail.com")).willReturn(userDetails);
-//
-//        authenticationToken = new UsernamePasswordAuthenticationToken(
-//                userDetails,
-//                null,
-//                userDetails.getAuthorities()
-//        );
-//
-//        SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-//
-//
-//        given(authServiceImpl.login(ArgumentMatchers.any(LoginDto.class)))
-//                .willReturn(Optional.of(user));
-//        String jwtToken = "Bearer " + authServiceImpl.login(loginDto);
-//
-//        given(userRepository.findByUsernameOrEmail(ArgumentMatchers.any(String.class), ArgumentMatchers.any(String.class)))
-//                .willReturn(Optional.of(user));
-
 //        given(postService.createPost(ArgumentMatchers.any(PostDto.class)))
 //                .willAnswer(invocationOnMock -> invocationOnMock.getArgument(0));
-//        /*Don't uncomment Start*/
-//        //.willAnswer(...): This is a method that specifies the behavior that should occur when the mocked method is
-//        // called with the specified arguments.
-//        //
-//        //invocationOnMock -> invocationOnMock.getArgument(0): This is a lambda expression that defines the behavior to
-//        // be executed when the mocked method is called. It retrieves the first argument (0 index) passed to the method
-//        // call and returns it as the result.
-//        /*Don't uncomment End*/
+        /*Don't uncomment Start*/
+        //.willAnswer(...): This is a method that specifies the behavior that should occur when the mocked method is
+        // called with the specified arguments.
+        //
+        //invocationOnMock -> invocationOnMock.getArgument(0): This is a lambda expression that defines the behavior to
+        // be executed when the mocked method is called. It retrieves the first argument (0 index) passed to the method
+        // call and returns it as the result.
+        /*Don't uncomment End*/
 
         //given - precondition or setup
         String jwtToken = "Bearer " + "Test Token";

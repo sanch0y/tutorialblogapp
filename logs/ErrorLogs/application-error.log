@@ -13,3 +13,23 @@
 2023-05-26T10:45:52.084+0900 ERROR title_______must not be empty
 2023-05-26T10:45:52.110+0900 ERROR Post not found with Id : '2'_______uri=/api/posts/2
 2023-05-26T10:45:52.125+0900 ERROR description_______Post description must have at least 10 characters
+2023-05-27T13:35:05.961+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T13:38:29.729+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T15:47:00.965+0900 ERROR Access Denied_______uri=/api/v1/posts
+2023-05-27T15:56:11.076+0900 ERROR Access Denied_______uri=/api/v1/posts
+2023-05-27T15:56:39.276+0900 ERROR Access Denied_______uri=/api/v1/posts
+2023-05-27T15:59:19.477+0900 ERROR Access Denied_______uri=/api/v1/posts
+2023-05-27T16:01:47.339+0900 ERROR Catogory not found with id : '1'_______uri=/api/v1/posts
+2023-05-27T17:42:37.618+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T17:44:21.182+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T18:02:48.518+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T18:05:07.337+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T18:09:39.624+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T18:15:21.016+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T18:18:55.880+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T18:20:46.802+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T18:23:58.291+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T18:26:43.791+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T18:29:58.819+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-27T18:55:27.929+0900 ERROR Catogory not found with id : '1'_______uri=/api/v1/posts
+2023-05-27T18:58:48.778+0900 ERROR Category not found with id : '1'_______uri=/api/v1/posts

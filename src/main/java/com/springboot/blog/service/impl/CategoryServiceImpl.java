@@ -33,7 +33,7 @@ public class CategoryServiceImpl implements CategoryService
     public CategoryDto getCategory(long categoryId)
     {
         Category category = categoryRepository.findById(categoryId)
-                .orElseThrow(() -> new ResourceNotFoundException("Catogory", "id", categoryId));
+                .orElseThrow(() -> new ResourceNotFoundException("Category", "id", categoryId));
 
         return modelMapper.map(category, CategoryDto.class);
     }
@@ -51,7 +51,7 @@ public class CategoryServiceImpl implements CategoryService
     @Override
     public CategoryDto updateCategory(CategoryDto categoryDto, long categoryId) {
         Category category = categoryRepository.findById(categoryId)
-                .orElseThrow(() -> new ResourceNotFoundException("Catogory", "id", categoryId));
+                .orElseThrow(() -> new ResourceNotFoundException("Category", "id", categoryId));
         category.setId(categoryId);
         category.setName(categoryDto.getName());
         category.setDescription(categoryDto.getDescription());
@@ -64,7 +64,7 @@ public class CategoryServiceImpl implements CategoryService
     @Override
     public String deleteCategory(long categoryId) {
         categoryRepository.findById(categoryId)
-                .orElseThrow(() -> new ResourceNotFoundException("Catogory", "id", categoryId));
+                .orElseThrow(() -> new ResourceNotFoundException("Category", "id", categoryId));
 
         categoryRepository.deleteById(categoryId);
 
