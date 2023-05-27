@@ -75,6 +75,21 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler
         return new ResponseEntity<>(errorDetails, HttpStatus.FORBIDDEN);
     }
 
+    @ExceptionHandler(org.springframework.security.access.AccessDeniedException.class)
+    public ResponseEntity<ErrorDetails> handleAccessDeniedException(
+            Exception exception,
+            WebRequest webRequest
+    )
+    {
+        ErrorDetails errorDetails = new ErrorDetails(
+                new Date(),
+                exception.getMessage(),
+                webRequest.getDescription(false)
+        );
+        LOGGER.error(errorDetails.getMessage() + "_______" + errorDetails.getDetails());
+        return new ResponseEntity<>(errorDetails, HttpStatus.UNAUTHORIZED);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorDetails> handleGlobalException(
             Exception exception,

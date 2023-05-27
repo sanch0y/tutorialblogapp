@@ -1,70 +1,29 @@
-2023-05-27T15:58:19.258+0900 INFO Current Role Name : ROLE_USER
-2023-05-27T15:59:19.159+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@60ee1a29 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T16:01:38.121+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 22016 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T16:01:38.126+0900 INFO The following 1 profile is active: "test"
-2023-05-27T16:01:46.180+0900 INFO Started PostControllerIntegrationTest in 8.389 seconds (process running for 10.196)
-2023-05-27T16:01:46.887+0900 INFO Current Role Id : 1
-2023-05-27T16:01:46.887+0900 INFO Current Role Name : ROLE_ADMIN
-2023-05-27T16:01:47.257+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@58581ab6 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T16:10:29.765+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 24432 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T16:10:29.769+0900 INFO The following 1 profile is active: "test"
-2023-05-27T16:10:39.074+0900 INFO Started PostControllerIntegrationTest in 9.638 seconds (process running for 11.489)
-2023-05-27T16:10:39.875+0900 INFO Current Role Id : 1
-2023-05-27T16:10:39.875+0900 INFO Current Role Name : ROLE_ADMIN
-2023-05-27T16:10:40.294+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@6311640d --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T17:42:29.527+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 24704 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T17:42:29.532+0900 INFO The following 1 profile is active: "test"
-2023-05-27T17:42:37.006+0900 INFO Started PostControllerIntegrationTest in 7.812 seconds (process running for 9.42)
-2023-05-27T17:42:37.546+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@3a516e4d --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T17:44:12.341+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 19756 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T17:44:12.348+0900 INFO The following 1 profile is active: "test"
-2023-05-27T17:44:20.431+0900 INFO Started PostControllerIntegrationTest in 8.447 seconds (process running for 10.31)
-2023-05-27T17:44:21.117+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@4a65ce06 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:02:27.425+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 19348 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:02:27.431+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:02:36.160+0900 INFO Started PostControllerIntegrationTest in 9.116 seconds (process running for 11.022)
-2023-05-27T18:02:48.443+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@3294b641 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:04:50.825+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 6784 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:04:50.832+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:04:59.492+0900 INFO Started PostControllerIntegrationTest in 9.074 seconds (process running for 11.017)
-2023-05-27T18:05:07.258+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@5269aa68 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:09:01.148+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 25000 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:09:01.156+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:09:10.503+0900 INFO Started PostControllerIntegrationTest in 9.741 seconds (process running for 12.069)
-2023-05-27T18:09:14.251+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@5269aa68 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:14:04.076+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 14096 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:14:04.080+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:14:13.372+0900 INFO Started PostControllerIntegrationTest in 9.687 seconds (process running for 11.61)
-2023-05-27T18:14:16.290+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@3294b641 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:18:35.865+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 14620 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:18:35.870+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:18:46.111+0900 INFO Started PostControllerIntegrationTest in 10.713 seconds (process running for 13.17)
-2023-05-27T18:18:49.959+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@2b208574 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:20:38.695+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 8072 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:20:38.699+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:20:46.152+0900 INFO Started PostControllerIntegrationTest in 7.78 seconds (process running for 9.392)
-2023-05-27T18:20:46.738+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@5b34e7bd --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:23:49.517+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 19604 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:23:49.522+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:23:57.534+0900 INFO Started PostControllerIntegrationTest in 8.329 seconds (process running for 10.009)
-2023-05-27T18:23:58.219+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@3d4ea4cf --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:26:34.365+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 13616 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:26:34.370+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:26:42.987+0900 INFO Started PostControllerIntegrationTest in 8.995 seconds (process running for 10.925)
-2023-05-27T18:26:43.698+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@31741bb6 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:29:49.997+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 23820 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:29:50.002+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:29:58.077+0900 INFO Started PostControllerIntegrationTest in 8.421 seconds (process running for 10.17)
-2023-05-27T18:29:58.742+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@3d4ea4cf --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:55:18.751+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 22280 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:55:18.757+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:55:26.838+0900 INFO Started PostControllerIntegrationTest in 8.452 seconds (process running for 10.533)
-2023-05-27T18:55:27.488+0900 INFO Current Role Id : 1
-2023-05-27T18:55:27.488+0900 INFO Current Role Name : ROLE_ADMIN
-2023-05-27T18:55:27.851+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@56587330 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-27T18:58:39.207+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 26984 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-27T18:58:39.212+0900 INFO The following 1 profile is active: "test"
-2023-05-27T18:58:47.676+0900 INFO Started PostControllerIntegrationTest in 8.826 seconds (process running for 10.576)
-2023-05-27T18:58:48.342+0900 INFO Current Role Id : 1
-2023-05-27T18:58:48.343+0900 INFO Current Role Name : ROLE_ADMIN
-2023-05-27T18:58:48.696+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@2f0b7b6d --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-28T05:40:59.552+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@788cb7b0
+2023-05-28T05:41:53.841+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 692 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-28T05:41:53.845+0900 INFO The following 1 profile is active: "test"
+2023-05-28T05:42:02.701+0900 INFO Started PostControllerIntegrationTest in 9.171 seconds (process running for 10.897)
+2023-05-28T05:42:03.253+0900 INFO Current Role Id : 1
+2023-05-28T05:42:03.253+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-28T05:42:03.692+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@25c6a9de --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-28T05:42:37.086+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 19600 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-28T05:42:37.091+0900 INFO The following 1 profile is active: "test"
+2023-05-28T05:42:45.658+0900 INFO Started PostControllerIntegrationTest in 8.932 seconds (process running for 11.065)
+2023-05-28T05:42:46.713+0900 INFO Current Role Id : 1
+2023-05-28T05:42:46.713+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-28T05:42:47.068+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@479f1d09
+2023-05-28T05:45:06.694+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 25676 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-28T05:45:06.699+0900 INFO The following 1 profile is active: "test"
+2023-05-28T05:45:14.421+0900 INFO Started PostControllerIntegrationTest in 8.058 seconds (process running for 9.84)
+2023-05-28T05:45:15.067+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@171b82ea
+2023-05-28T05:47:07.641+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 16540 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-28T05:47:07.647+0900 INFO The following 1 profile is active: "test"
+2023-05-28T05:47:16.098+0900 INFO Started PostControllerIntegrationTest in 8.789 seconds (process running for 10.521)
+2023-05-28T05:47:16.737+0900 INFO Current Role Id : 1
+2023-05-28T05:47:16.737+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-28T05:47:17.103+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@93a793a
+2023-05-28T05:48:51.730+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 15416 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-28T05:48:51.734+0900 INFO The following 1 profile is active: "test"
+2023-05-28T05:48:59.544+0900 INFO Started PostControllerIntegrationTest in 8.181 seconds (process running for 9.967)
+2023-05-28T05:49:00.281+0900 INFO Current Role Id : 1
+2023-05-28T05:49:00.282+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-28T05:49:00.541+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@4c8ab21f

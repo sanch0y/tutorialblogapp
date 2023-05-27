@@ -1,25 +1,14 @@
 package com.springboot.blog.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.springboot.blog.dto.LoginDto;
 import com.springboot.blog.dto.PostDto;
 import com.springboot.blog.dto.PostResponse;
 import com.springboot.blog.entity.Category;
 import com.springboot.blog.entity.Post;
-import com.springboot.blog.entity.Role;
-import com.springboot.blog.entity.User;
 import com.springboot.blog.exception.ResourceNotFoundException;
-import com.springboot.blog.repository.RoleRepository;
-import com.springboot.blog.repository.UserRepository;
 import com.springboot.blog.security.JwtAuthenticationFilter;
 import com.springboot.blog.security.JwtTokenProvider;
-import com.springboot.blog.service.CategoryService;
 import com.springboot.blog.service.PostService;
-import com.springboot.blog.service.impl.AuthServiceImpl;
-import io.jsonwebtoken.JwtBuilder;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.io.Decoders;
-import io.jsonwebtoken.security.Keys;
 import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.*;
 import org.mockito.ArgumentMatchers;
@@ -28,20 +17,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
@@ -59,23 +38,14 @@ public class PostControllerTests
     @MockBean  //Tells Spring to create this Mock instance of PostService and add it to the application context so that it is injected into EmployeeController.
     private PostService postService;
 
+    @MockBean
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
+
+    @MockBean
+    private JwtTokenProvider jwtTokenProvider;
+
 //    @MockBean
 //    private RoleRepository roleRepository;
-//
-//    @MockBean
-//    private AuthServiceImpl authServiceImpl;
-
-    @MockBean
-    private CategoryService categoryService;
-
-    @MockBean
-    private UserRepository userRepository;
-
-    @MockBean
-    JwtAuthenticationFilter jwtAuthenticationFilter;
-
-    @MockBean
-    JwtTokenProvider jwtTokenProvider;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -87,19 +57,6 @@ public class PostControllerTests
     private PostDto responseDto;
 
     private Category category;
-//
-//    private LoginDto loginDto;
-//
-//    private Role adminRole;
-
-//    @MockBean
-//    private Role userRole;
-//
-//    @MockBean
-//    private User user;
-
-    private static final String SECRET = "103e3e7b464113b1722f0af3dc4e8ad043a0efdc7e86b9a2e7e7c848069f7714";
-    private static final long EXPIRATION_MS = 2592000000L;
 
     @BeforeEach
     public void setPostWIthCategory()
@@ -132,21 +89,6 @@ public class PostControllerTests
                 .content("PostContent1")
                 .categoryId(postEntity.getCategory().getId())
                 .build();
-
-//        loginDto.setUsernameOrEmail("sanchoy@gmail.com");
-//        loginDto.setPassword("admin123");
-//
-//        adminRole.setId(1L);
-//        adminRole.setName("ROLE_ADMIN");
-//        Set<Role> adminRoles = new HashSet<>();
-//        adminRoles.add(adminRole);
-//
-//        user.setId(1L);
-//        user.setName("admin");
-//        user.setUsername("admin");
-//        user.setEmail("sanchoy@gmail.com");
-//        user.setPassword("admin123");
-//        user.setRoles(adminRoles);
     }
 
     @DisplayName("Controller_Logic_01")
@@ -366,6 +308,7 @@ public class PostControllerTests
     public void givenPostDtoObjectWithContentSizeMostMinimum_whenSavePost_thenReturnBadRequestError() throws Exception
     {
         requestDto.setContent("C");
+        responseDto.setContent("C");
 
         //given - precondition or setup
         String jwtToken = "Bearer " + "Test Token";
@@ -499,6 +442,10 @@ public class PostControllerTests
         // when - action or behaviour that we are going to test
         ResultActions response = mockMvc.perform(get("/api/v1/posts")
                 .header("Authorization", jwtToken)
+                .param("pageNo", String.valueOf(pageNo))
+                .param("pageSize", String.valueOf(pageSize))
+                .param("sortBy", sortBy)
+                .param("sortDir", sortDir)
                 .contentType(MediaType.APPLICATION_JSON));
 
         //then - verify the output
@@ -532,11 +479,11 @@ public class PostControllerTests
     {
         //given - precondition or setup
         int pageNo = 0;
-        int pageSize = 1;
+        int pageSize = 10;
         String sortBy = "id";
         String sortDir = "asc";
         int totalElements = 0;
-        int totalPages = 1;
+        int totalPages = 0;
         boolean lastPage = true;
 
         List<PostDto> expectedPostDtos = makePostDtoList(totalElements);
@@ -559,6 +506,10 @@ public class PostControllerTests
         // when - action or behaviour that we are going to test
         ResultActions response = mockMvc.perform(get("/api/v1/posts")
                 .header("Authorization", jwtToken)
+                .param("pageNo", String.valueOf(pageNo))
+                .param("pageSize", String.valueOf(pageSize))
+                .param("sortBy", sortBy)
+                .param("sortDir", sortDir)
                 .contentType(MediaType.APPLICATION_JSON));
 
         //then - verify the output
