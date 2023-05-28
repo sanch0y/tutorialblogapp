@@ -7,6 +7,7 @@ import com.springboot.blog.dto.PostResponse;
 import com.springboot.blog.dto.RegisterDto;
 import com.springboot.blog.entity.Category;
 import com.springboot.blog.entity.Post;
+import com.springboot.blog.exception.ResourceNotFoundException;
 import com.springboot.blog.repository.CategoryRepository;
 import com.springboot.blog.repository.PostRepository;
 import com.springboot.blog.repository.UserRepository;
@@ -31,8 +32,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.mockito.BDDMockito.given;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc(addFilters = false)
@@ -211,7 +211,7 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("An Authentication object was not found in the SecurityContext")));
     }
 
-    @DisplayName("Controller_Logic_04")
+    @DisplayName("Integration_Test_04")
     @Test //4//BDD//Negative//
     public void givenPostDtoObjectWithTitleSizeLessThanMinimum_whenSavePost_thenReturnBadRequestError() throws Exception
     {
@@ -256,7 +256,7 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
-    @DisplayName("Controller_Logic_05")
+    @DisplayName("Integration_Test_05")
     @Test //5//BDD//Negative//
     public void givenPostDtoObjectWithEmptyTitle_whenSavePost_thenReturnBadRequestError() throws Exception
     {
@@ -301,7 +301,7 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
-    @DisplayName("Controller_Logic_06")
+    @DisplayName("Integration_Test_06")
     @Test //6//BDD//Negative//
     public void givenPostDtoObjectWithNullTitle_whenSavePost_thenReturnBadRequestError() throws Exception
     {
@@ -347,7 +347,7 @@ public class PostControllerIntegrationTest {
     }
 
 
-    @DisplayName("Controller_Logic_07")
+    @DisplayName("Integration_Test_07")
     @Test //7//BDD//Negative//
     public void givenPostDtoObjectWithDescriptionSizeLessThanMinimum_whenSavePost_thenReturnBadRequestError() throws Exception
     {
@@ -392,7 +392,7 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
-    @DisplayName("Controller_Logic_08")
+    @DisplayName("Integration_Test_08")
     @Test //8//BDD//Negative//
     public void givenPostDtoObjectWithEmptyDescription_whenSavePost_thenReturnBadRequestError() throws Exception
     {
@@ -437,7 +437,7 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
-    @DisplayName("Controller_Logic_09")
+    @DisplayName("Integration_Test_09")
     @Test //9//BDD//Negative//
     public void givenPostDtoObjectWithNullDescription_whenSavePost_thenReturnBadRequestError() throws Exception
     {
@@ -482,7 +482,7 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
-    @DisplayName("Controller_Logic_10")
+    @DisplayName("Integration_Test_10")
     @Test //10//BDD//Positive//
     public void givenPostDtoObjectWithContentSizeMostMinimum_whenSavePost_thenReturnBadRequestError() throws Exception
     {
@@ -526,7 +526,7 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.categoryId", CoreMatchers.is((int) responseDto.getCategoryId())));
     }
 
-    @DisplayName("Controller_Logic_11")
+    @DisplayName("Integration_Test_11")
     @Test //9//BDD//Negative//
     public void givenPostDtoObjectWithEmptyContent_whenSavePost_thenReturnBadRequestError() throws Exception
     {
@@ -571,7 +571,7 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.content().string(specificValidationError));
     }
 
-    @DisplayName("Controller_Logic_12")
+    @DisplayName("Integration_Test_12")
     @Test //12//BDD//Negative//
     public void givenPostDtoObjectWithNullContent_whenSavePost_thenReturnBadRequestError() throws Exception
     {
@@ -654,7 +654,7 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Category not found with id : '"+requestDto.getCategoryId()+"'")));
     }
 
-    @DisplayName("Controller_Logic_14")
+    @DisplayName("Integration_Test_14")
     @Test //14//BDD//Positive//
     public void givenPostDtoList_whenGetAllPosts_thenReturnListOfPostObjects() throws Exception
     {
@@ -725,7 +725,7 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.last", CoreMatchers.is(expectedResponse.isLast())));
     }
 
-    @DisplayName("Controller_Logic_15")
+    @DisplayName("Integration_Test_15")
     @Test //15//BDD//Negative//
     public void givenPostDtoList_whenGetAllPosts_thenReturnEmptyList() throws Exception
     {
@@ -760,6 +760,409 @@ public class PostControllerIntegrationTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.totalElement", CoreMatchers.is(totalElements)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.totalPage", CoreMatchers.is(totalPages)))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.last", CoreMatchers.is(lastPage)));
+    }
+
+    @DisplayName("Integration_Test_16")
+    @Test //16//BDD//Positive//
+    public void givenPostIdAndPostDtoObject_whenGetPostById_thenReturnSpecificPost() throws Exception
+    {
+        long postId = 1;
+
+        /*Authentication Preprocedure Start*/
+        authServiceImpl.registerAdmin(registerDto);
+
+        String jwtToken = "Bearer " + authService.login(loginDto);
+        /*Authentication Preprocedure End*/
+
+        //Save category firstly
+        categoryRepository.save(category);
+        //Save posts secondly
+        List<Post> postsToSave = makePostList(1);
+        Post post = postsToSave.get(0);
+        postRepository.save(post);
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(get("/api/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .header("X-API-VERSION", "1"));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id", CoreMatchers.is((int) postId)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.title", CoreMatchers.is(responseDto.getTitle())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.description", CoreMatchers.is(responseDto.getDescription())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content", CoreMatchers.is(responseDto.getContent())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.categoryId", CoreMatchers.is((int) category.getId())));
+    }
+
+    @DisplayName("Integration_Test_17")
+    @Test //17//BDD//Negative//
+    public void givenPostIdAndPostDtoObject_whenGetPostById_thenReturnNotFoundError() throws Exception
+    {
+        long postId = 2;
+
+        /*Authentication Preprocedure Start*/
+        authServiceImpl.registerAdmin(registerDto);
+
+        String jwtToken = "Bearer " + authService.login(loginDto);
+        /*Authentication Preprocedure End*/
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(get("/api/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .header("X-API-VERSION", "1"));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isNotFound())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Post not found with id : '"+postId+"'")));
+    }
+
+    @DisplayName("Integration_Test_18")
+    @Test //18//BDD//Positive//
+    public void givenPostIdAndPostDtoObject_whenUpdatePost_thenReturnUpdatedPost() throws Exception
+    {
+        long postId = 1;
+
+        /*Authentication Preprocedure Start*/
+        registerAdminDto = RegisterDto.builder()
+                .name("Sanchoy")
+                .username("admin")
+                .email("admin@gmail.com")
+                .password("admin123")
+                .build();
+
+        loginDto = LoginDto.builder()
+                .usernameOrEmail("admin@gmail.com")
+                .password("admin123")
+                .build();
+
+        authServiceImpl.registerAdmin(registerAdminDto);
+
+        String jwtToken = "Bearer " + authService.login(loginDto);
+        /*Authentication Preprocedure End*/
+
+        //First save Category
+        categoryRepository.save(category);
+        //Second save Post
+        List<Post> postsToSave = makePostList(1);
+        Post post = postsToSave.get(0);
+        postRepository.save(post);
+        //Third save another category to use future update of post
+        category = Category.builder()
+                .id(2)
+                .name("category2")
+                .description("description2")
+                .build();
+        categoryRepository.save(category);
+
+        //Update post
+        requestDto = PostDto.builder()
+                .title("UpdatedPostTitle1")
+                .description("UpdatedPostDescription1")
+                .content("UpdatedPostContent1")
+                .categoryId(category.getId())
+                .build();
+
+        //Expected Response
+        responseDto = PostDto.builder()
+                .id(1)
+                .title("UpdatedPostTitle1")
+                .description("UpdatedPostDescription1")
+                .content("UpdatedPostContent1")
+                .categoryId(category.getId())
+                .build();
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(put("/api/v1/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(requestDto)));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id", CoreMatchers.is((int) postId)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.title", CoreMatchers.is(responseDto.getTitle())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.description", CoreMatchers.is(responseDto.getDescription())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content", CoreMatchers.is(responseDto.getContent())))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.categoryId", CoreMatchers.is((int) responseDto.getCategoryId())));
+    }
+
+    @DisplayName("Integration_Test_19")
+    @Test //19//BDD//Negative//
+    public void givenPostIdAndPostDtoObject_whenUpdatePost_thenReturnPostNotFoundError() throws Exception
+    {
+        long postId = 1;
+
+        /*Authentication Preprocedure Start*/
+        registerAdminDto = RegisterDto.builder()
+                .name("Sanchoy")
+                .username("admin")
+                .email("admin@gmail.com")
+                .password("admin123")
+                .build();
+
+        loginDto = LoginDto.builder()
+                .usernameOrEmail("admin@gmail.com")
+                .password("admin123")
+                .build();
+
+        authServiceImpl.registerAdmin(registerAdminDto);
+
+        String jwtToken = "Bearer " + authService.login(loginDto);
+        /*Authentication Preprocedure End*/
+
+        //Update post
+        requestDto = PostDto.builder()
+                .title("UpdatedPostTitle1")
+                .description("UpdatedPostDescription1")
+                .content("UpdatedPostContent1")
+                .categoryId(category.getId())
+                .build();
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(put("/api/v1/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(requestDto)));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isNotFound())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Post not found with id : '"+postId+"'")));
+    }
+
+    @DisplayName("Integration_Test_20")
+    @Test //20//BDD//Negative//
+    public void givenPostIdAndPostDtoObject_whenUpdatePost_thenReturnNotCategoryFoundError() throws Exception
+    {
+        long postId = 1;
+        long wrongCategoryId = 2;
+
+        /*Authentication Preprocedure Start*/
+        registerAdminDto = RegisterDto.builder()
+                .name("Sanchoy")
+                .username("admin")
+                .email("admin@gmail.com")
+                .password("admin123")
+                .build();
+
+        loginDto = LoginDto.builder()
+                .usernameOrEmail("admin@gmail.com")
+                .password("admin123")
+                .build();
+
+        authServiceImpl.registerAdmin(registerAdminDto);
+
+        String jwtToken = "Bearer " + authService.login(loginDto);
+        /*Authentication Preprocedure End*/
+
+        //First save Category
+        categoryRepository.save(category);
+        //Second save Post
+        List<Post> postsToSave = makePostList(1);
+        Post post = postsToSave.get(0);
+        postRepository.save(post);
+
+        //Update post
+        requestDto = PostDto.builder()
+                .title("UpdatedPostTitle1")
+                .description("UpdatedPostDescription1")
+                .content("UpdatedPostContent1")
+                .categoryId(wrongCategoryId)
+                .build();
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(put("/api/v1/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(requestDto)));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isNotFound())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Category not found with id : '"+wrongCategoryId+"'")));
+    }
+
+    @DisplayName("Integration_Test_21")
+    @Test //21//BDD//Negative//
+    public void givenPostIdAndPostDtoObject_whenUpdatePost_thenReturnForbiddenError() throws Exception
+    {
+        long postId = 1;
+        String jwtToken = "Bearer " + "Wrong Token";
+
+        //Update post
+        requestDto = PostDto.builder()
+                .title("UpdatedPostTitle1")
+                .description("UpdatedPostDescription1")
+                .content("UpdatedPostContent1")
+                .categoryId(category.getId())
+                .build();
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(put("/api/v1/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(requestDto)));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isForbidden())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("An Authentication object was not found in the SecurityContext")));
+    }
+
+    @DisplayName("Integration_Test_22")
+    @Test
+    //2//BDD//Negative//
+    public void givenPostIdAndPostDtoObject_whenUpdatePost_thenReturnUnauthorizedError() throws Exception
+    {
+        long postId = 1;
+        authService.register(registerDto);
+
+        String jwtToken = "Bearer " + authService.login(loginDto);
+
+        //Update post
+        requestDto = PostDto.builder()
+                .title("UpdatedPostTitle1")
+                .description("UpdatedPostDescription1")
+                .content("UpdatedPostContent1")
+                .categoryId(category.getId())
+                .build();
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(put("/api/v1/posts/{postId}", postId)
+                .header("Authorization", jwtToken)
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(requestDto)));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isUnauthorized())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Access Denied")));
+    }
+
+    @DisplayName("Integration_Test_23")
+    @Test //23//BDD//Positive//
+    public void givenPostId_whenDeletePostById_thenReturnDeletedMessage() throws Exception
+    {
+        long postId = 1;
+        String dltConfirmationMsg = String.format("Post with id %s was deleted successfully", postId);
+
+        /*Authentication Preprocedure Start*/
+        registerAdminDto = RegisterDto.builder()
+                .name("Sanchoy")
+                .username("admin")
+                .email("admin@gmail.com")
+                .password("admin123")
+                .build();
+
+        loginDto = LoginDto.builder()
+                .usernameOrEmail("admin@gmail.com")
+                .password("admin123")
+                .build();
+
+        authServiceImpl.registerAdmin(registerAdminDto);
+
+        String jwtToken = "Bearer " + authService.login(loginDto);
+        /*Authentication Preprocedure End*/
+
+        //First save Category
+        categoryRepository.save(category);
+        //Second save Post
+        List<Post> postsToSave = makePostList(1);
+        Post post = postsToSave.get(0);
+        postRepository.save(post);
+
+        //Expected Response
+        responseDto = PostDto.builder()
+                .id(1)
+                .title("UpdatedPostTitle1")
+                .description("UpdatedPostDescription1")
+                .content("UpdatedPostContent1")
+                .categoryId(category.getId())
+                .build();
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(delete("/api/v1/posts/{id}", postId)
+                .header("Authorization", jwtToken));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isOk())
+                .andExpect(result -> result.getResponse().getContentAsString().equals(dltConfirmationMsg));
+    }
+
+    @DisplayName("Integration_Test_24")
+    @Test //24//BDD//Negative//
+    public void givenPostId_whenDeletePostById_thenReturnPostNotFoundError() throws Exception
+    {
+        long postId = 1;
+
+        /*Authentication Preprocedure Start*/
+        registerAdminDto = RegisterDto.builder()
+                .name("Sanchoy")
+                .username("admin")
+                .email("admin@gmail.com")
+                .password("admin123")
+                .build();
+
+        loginDto = LoginDto.builder()
+                .usernameOrEmail("admin@gmail.com")
+                .password("admin123")
+                .build();
+
+        authServiceImpl.registerAdmin(registerAdminDto);
+
+        String jwtToken = "Bearer " + authService.login(loginDto);
+        /*Authentication Preprocedure End*/
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(delete("/api/v1/posts/{id}", postId)
+                .header("Authorization", jwtToken));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isNotFound())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Post not found with Id : '"+postId+"'")));
+    }
+
+    @DisplayName("Integration_Test_25")
+    @Test //25//BDD//Negative//
+    public void givenPostId_whenDeletePostById_thenReturnForbiddenError() throws Exception
+    {
+        long postId = 1;
+        String jwtToken = "Bearer " + "Wrong Token";
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(delete("/api/v1/posts/{id}", postId)
+                .header("Authorization", jwtToken));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isForbidden())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("An Authentication object was not found in the SecurityContext")));
+    }
+
+    @DisplayName("Integration_Test_26")
+    @Test
+    //26//BDD//Negative//
+    public void givenPostId_whenDeletePostById_thenReturnUnauthorizedError() throws Exception
+    {
+        long postId = 1;
+        authService.register(registerDto);
+
+        String jwtToken = "Bearer " + authService.login(loginDto);
+
+        // when - action or behaviour that we are going to test
+        ResultActions response = mockMvc.perform(delete("/api/v1/posts/{id}", postId)
+                .header("Authorization", jwtToken));
+
+        // then - verify the output
+        response.andDo(MockMvcResultHandlers.print())
+                .andExpect(MockMvcResultMatchers.status().isUnauthorized())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.message", CoreMatchers.is("Access Denied")));
     }
 
 

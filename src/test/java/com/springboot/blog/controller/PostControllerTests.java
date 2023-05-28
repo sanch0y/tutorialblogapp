@@ -591,8 +591,8 @@ public class PostControllerTests
         responseDto = PostDto.builder()
                 .id(1)
                 .title("UpdatedPostTitle1")
-                .description("UpdatedPostTitle1")
-                .content("UpdatedPostTitle1")
+                .description("UpdatedPostDescription1")
+                .content("UpdatedPostContent1")
                 .categoryId(category.getId())
                 .build();
 

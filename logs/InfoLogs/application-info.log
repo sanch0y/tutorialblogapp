@@ -1,29 +1,32 @@
-2023-05-28T05:40:59.552+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@788cb7b0
-2023-05-28T05:41:53.841+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 692 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-28T05:41:53.845+0900 INFO The following 1 profile is active: "test"
-2023-05-28T05:42:02.701+0900 INFO Started PostControllerIntegrationTest in 9.171 seconds (process running for 10.897)
-2023-05-28T05:42:03.253+0900 INFO Current Role Id : 1
-2023-05-28T05:42:03.253+0900 INFO Current Role Name : ROLE_ADMIN
-2023-05-28T05:42:03.692+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@25c6a9de --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
-2023-05-28T05:42:37.086+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 19600 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-28T05:42:37.091+0900 INFO The following 1 profile is active: "test"
-2023-05-28T05:42:45.658+0900 INFO Started PostControllerIntegrationTest in 8.932 seconds (process running for 11.065)
-2023-05-28T05:42:46.713+0900 INFO Current Role Id : 1
-2023-05-28T05:42:46.713+0900 INFO Current Role Name : ROLE_ADMIN
-2023-05-28T05:42:47.068+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@479f1d09
-2023-05-28T05:45:06.694+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 25676 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-28T05:45:06.699+0900 INFO The following 1 profile is active: "test"
-2023-05-28T05:45:14.421+0900 INFO Started PostControllerIntegrationTest in 8.058 seconds (process running for 9.84)
-2023-05-28T05:45:15.067+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@171b82ea
-2023-05-28T05:47:07.641+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 16540 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-28T05:47:07.647+0900 INFO The following 1 profile is active: "test"
-2023-05-28T05:47:16.098+0900 INFO Started PostControllerIntegrationTest in 8.789 seconds (process running for 10.521)
-2023-05-28T05:47:16.737+0900 INFO Current Role Id : 1
-2023-05-28T05:47:16.737+0900 INFO Current Role Name : ROLE_ADMIN
-2023-05-28T05:47:17.103+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@93a793a
-2023-05-28T05:48:51.730+0900 INFO Starting PostControllerIntegrationTest using Java 17.0.6 with PID 15416 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
-2023-05-28T05:48:51.734+0900 INFO The following 1 profile is active: "test"
-2023-05-28T05:48:59.544+0900 INFO Started PostControllerIntegrationTest in 8.181 seconds (process running for 9.967)
-2023-05-28T05:49:00.281+0900 INFO Current Role Id : 1
-2023-05-28T05:49:00.282+0900 INFO Current Role Name : ROLE_ADMIN
-2023-05-28T05:49:00.541+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@4c8ab21f
+2023-05-29T01:15:05.213+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@5ea206bc
+2023-05-29T01:15:05.427+0900 INFO Current Role Id : 1
+2023-05-29T01:15:05.427+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-29T01:15:05.516+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@138a8c9e --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":null,"comments":null,"categoryId":1}
+2023-05-29T01:15:05.645+0900 INFO Current Role Id : 1
+2023-05-29T01:15:05.645+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-29T01:15:05.755+0900 INFO Method: PUT --- Path: /api/v1/posts/1 --- Header: java.util.Collections$3@22e470f4 --- Request Body: {"id":0,"title":"UpdatedPostTitle1","description":"UpdatedPostDescription1","content":"UpdatedPostContent1","comments":null,"categoryId":2}
+2023-05-29T01:15:05.930+0900 INFO Current Role Id : 1
+2023-05-29T01:15:05.930+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-29T01:15:06.009+0900 INFO Method: GET --- Path: /api/v1/posts --- Header: java.util.Collections$3@3dabf112
+2023-05-29T01:15:06.151+0900 INFO Current Role Id : 1
+2023-05-29T01:15:06.151+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-29T01:15:06.231+0900 INFO Method: PUT --- Path: /api/v1/posts/1 --- Header: java.util.Collections$3@4b56971a --- Request Body: {"id":0,"title":"UpdatedPostTitle1","description":"UpdatedPostDescription1","content":"UpdatedPostContent1","comments":null,"categoryId":1}
+2023-05-29T01:15:06.299+0900 INFO Method: PUT --- Path: /api/v1/posts/1 --- Header: java.util.Collections$3@292109c7 --- Request Body: {"id":0,"title":"UpdatedPostTitle1","description":"UpdatedPostDescription1","content":"UpdatedPostContent1","comments":null,"categoryId":1}
+2023-05-29T01:15:06.431+0900 INFO Current Role Id : 2
+2023-05-29T01:15:06.431+0900 INFO Current Role Name : ROLE_USER
+2023-05-29T01:15:06.522+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@7e5e568e --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-29T01:15:06.654+0900 INFO Current Role Id : 1
+2023-05-29T01:15:06.655+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-29T01:15:06.748+0900 INFO Method: PUT --- Path: /api/v1/posts/1 --- Header: java.util.Collections$3@5c2086b4 --- Request Body: {"id":0,"title":"UpdatedPostTitle1","description":"UpdatedPostDescription1","content":"UpdatedPostContent1","comments":null,"categoryId":2}
+2023-05-29T01:15:06.904+0900 INFO Current Role Id : 1
+2023-05-29T01:15:06.904+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-29T01:15:06.993+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@3be3ba84 --- Request Body: {"id":0,"title":"PostTitle1","description":"PostDescription1","content":"","comments":null,"categoryId":1}
+2023-05-29T01:15:07.128+0900 INFO Current Role Id : 1
+2023-05-29T01:15:07.129+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-29T01:15:07.219+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@1396ee3b --- Request Body: {"id":0,"title":"","description":"PostDescription1","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-29T01:15:07.353+0900 INFO Current Role Id : 1
+2023-05-29T01:15:07.354+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-29T01:15:07.428+0900 INFO Method: GET --- Path: /api/posts/2 --- Header: java.util.Collections$3@22ccd80f
+2023-05-29T01:15:07.563+0900 INFO Current Role Id : 1
+2023-05-29T01:15:07.563+0900 INFO Current Role Name : ROLE_ADMIN
+2023-05-29T01:15:07.649+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@339b1c34 --- Request Body: {"id":0,"title":"PostTitle1","description":"D","content":"PostContent1","comments":null,"categoryId":1}
