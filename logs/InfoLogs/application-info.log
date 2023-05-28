@@ -30,3 +30,12 @@
 2023-05-29T01:15:07.563+0900 INFO Current Role Id : 1
 2023-05-29T01:15:07.563+0900 INFO Current Role Name : ROLE_ADMIN
 2023-05-29T01:15:07.649+0900 INFO Method: POST --- Path: /api/v1/posts --- Header: java.util.Collections$3@339b1c34 --- Request Body: {"id":0,"title":"PostTitle1","description":"D","content":"PostContent1","comments":null,"categoryId":1}
+2023-05-29T01:42:16.336+0900 INFO Starting PostRepositoryIntegrationTests using Java 17.0.6 with PID 10620 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-29T01:42:16.343+0900 INFO The following 1 profile is active: "test"
+2023-05-29T01:42:19.930+0900 INFO Started PostRepositoryIntegrationTests in 4.011 seconds (process running for 6.011)
+2023-05-29T01:43:57.921+0900 INFO Starting PostRepositoryIntegrationTests using Java 17.0.6 with PID 6560 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-29T01:43:57.924+0900 INFO The following 1 profile is active: "test"
+2023-05-29T01:44:01.534+0900 INFO Started PostRepositoryIntegrationTests in 4.027 seconds (process running for 5.688)
+2023-05-29T01:48:52.947+0900 INFO Starting PostRepositoryIntegrationTests using Java 17.0.6 with PID 22296 (started by ts-mahmudul.b.hasan in C:\DEV\TUT\tutorialblogapp)
+2023-05-29T01:48:52.954+0900 INFO The following 1 profile is active: "test"
+2023-05-29T01:48:56.970+0900 INFO Started PostRepositoryIntegrationTests in 4.444 seconds (process running for 6.47)

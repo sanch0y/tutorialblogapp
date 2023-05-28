@@ -7,7 +7,6 @@ import com.springboot.blog.dto.PostResponse;
 import com.springboot.blog.dto.RegisterDto;
 import com.springboot.blog.entity.Category;
 import com.springboot.blog.entity.Post;
-import com.springboot.blog.exception.ResourceNotFoundException;
 import com.springboot.blog.repository.CategoryRepository;
 import com.springboot.blog.repository.PostRepository;
 import com.springboot.blog.repository.UserRepository;
