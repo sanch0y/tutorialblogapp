@@ -1,1 +1,8 @@
-C:\DEV\TUT\springboot-blog-rest-api\src\test\java\com\springboot\blog\SpringbootBlogRestApiApplicationTests.java
+C:\DEV\TUT\tutorialblogapp\src\test\java\com\springboot\blog\repository\PostRepositoryTests.java
+C:\DEV\TUT\tutorialblogapp\src\test\java\com\springboot\blog\service\PostServiceTests.java
+C:\DEV\TUT\tutorialblogapp\src\test\java\com\springboot\blog\Integration\PostControllerIntegrationTestWithTestContainer.java
+C:\DEV\TUT\tutorialblogapp\src\test\java\com\springboot\blog\SpringbootBlogRestApiApplicationTests.java
+C:\DEV\TUT\tutorialblogapp\src\test\java\com\springboot\blog\controller\PostControllerTests.java
+C:\DEV\TUT\tutorialblogapp\src\test\java\com\springboot\blog\Integration\PostControllerIntegrationTest.java
+C:\DEV\TUT\tutorialblogapp\src\test\java\com\springboot\blog\repository\helper\RepositoryTruncation.java
+C:\DEV\TUT\tutorialblogapp\src\test\java\com\springboot\blog\repository\Integration\PostRepositoryIntegrationTests.java

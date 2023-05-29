@@ -10,7 +10,7 @@ import com.springboot.blog.entity.Post;
 import com.springboot.blog.repository.CategoryRepository;
 import com.springboot.blog.repository.PostRepository;
 import com.springboot.blog.repository.UserRepository;
-import com.springboot.blog.repository.helper.RepositoryTruncation;
+import com.springboot.blog.helper.RepositoryTruncation;
 import com.springboot.blog.service.AuthService;
 import com.springboot.blog.service.impl.AuthServiceImpl;
 import org.hamcrest.CoreMatchers;
@@ -30,7 +30,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

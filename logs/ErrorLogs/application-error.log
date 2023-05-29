@@ -1,105 +1,15 @@
-2023-05-28T02:05:19.163+0900 ERROR description_______must not be empty
-2023-05-28T02:05:19.437+0900 ERROR description_______must not be empty
-2023-05-28T02:05:19.438+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-28T02:05:19.481+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
-2023-05-28T02:05:19.740+0900 ERROR content_______must not be empty
-2023-05-28T02:05:19.993+0900 ERROR Access Denied_______uri=/api/v1/posts
-2023-05-28T02:05:20.213+0900 ERROR content_______must not be empty
-2023-05-28T02:05:20.446+0900 ERROR title_______must not be empty
-2023-05-28T02:05:20.446+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-28T02:05:20.682+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-28T02:06:40.582+0900 ERROR Category not found with id : '1'_______uri=/api/v1/posts
-2023-05-28T02:08:18.101+0900 ERROR Category not found with id : '1'_______uri=/api/v1/posts
-2023-05-28T02:10:37.176+0900 ERROR Category not found with id : '0'_______uri=/api/v1/posts
-2023-05-28T02:31:50.825+0900 ERROR Category not found with id : '1'_______uri=/api/v1/posts
-2023-05-28T02:32:35.351+0900 ERROR Category not found with id : '1'_______uri=/api/v1/posts
-2023-05-28T03:45:08.303+0900 ERROR Category not found with id : '1'_______uri=/api/v1/posts
-2023-05-28T03:45:08.541+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-28T03:45:08.780+0900 ERROR title_______must not be empty
-2023-05-28T03:45:09.296+0900 ERROR description_______must not be empty
-2023-05-28T03:45:09.527+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-28T03:45:09.527+0900 ERROR description_______must not be empty
-2023-05-28T03:45:09.594+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
-2023-05-28T03:45:09.825+0900 ERROR content_______must not be empty
-2023-05-28T03:45:10.059+0900 ERROR Access Denied_______uri=/api/v1/posts
-2023-05-28T03:45:10.287+0900 ERROR content_______must not be empty
-2023-05-28T03:45:10.522+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-28T03:45:10.522+0900 ERROR title_______must not be empty
-2023-05-28T03:45:10.772+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-28T03:52:27.389+0900 ERROR Category not found with id : '1'_______uri=/api/v1/posts
-2023-05-28T03:52:27.645+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-28T03:52:27.898+0900 ERROR title_______must not be empty
-2023-05-28T03:52:28.408+0900 ERROR description_______must not be empty
-2023-05-28T03:52:28.648+0900 ERROR description_______must not be empty
-2023-05-28T03:52:28.648+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-28T03:52:28.720+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
-2023-05-28T03:52:28.981+0900 ERROR content_______must not be empty
-2023-05-28T03:52:29.226+0900 ERROR Access Denied_______uri=/api/v1/posts
-2023-05-28T03:52:29.467+0900 ERROR content_______must not be empty
-2023-05-28T03:52:29.709+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-28T03:52:29.709+0900 ERROR title_______must not be empty
-2023-05-28T03:52:29.949+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-28T05:55:56.114+0900 ERROR Category not found with id : '1'_______uri=/api/v1/posts
-2023-05-28T05:55:56.406+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-28T05:55:56.654+0900 ERROR title_______must not be empty
-2023-05-28T05:55:57.192+0900 ERROR description_______must not be empty
-2023-05-28T05:55:57.437+0900 ERROR description_______must not be empty
-2023-05-28T05:55:57.437+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-28T05:55:57.532+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
-2023-05-28T05:55:58.057+0900 ERROR content_______must not be empty
-2023-05-28T05:55:58.521+0900 ERROR Access Denied_______uri=/api/v1/posts
-2023-05-28T05:55:58.755+0900 ERROR content_______must not be empty
-2023-05-28T05:55:58.987+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-28T05:55:58.987+0900 ERROR title_______must not be empty
-2023-05-28T05:55:59.245+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-28T13:46:02.102+0900 ERROR Post not found with id : '1'_______uri=/api/posts/1
-2023-05-28T22:45:10.129+0900 ERROR Post not found with id : '2'_______uri=/api/posts/2
-2023-05-28T22:50:01.127+0900 ERROR Post not found with id : '2'_______uri=/api/posts/2
-2023-05-28T23:23:18.963+0900 ERROR Post not found with id : '1'_______uri=/api/v1/posts/1
-2023-05-28T23:23:56.227+0900 ERROR Post not found with Id : '2'_______uri=/api/v1/posts/2
-2023-05-28T23:25:03.380+0900 ERROR Post not found with id : '1'_______uri=/api/v1/posts/1
-2023-05-28T23:33:31.478+0900 ERROR Category not found with id : '2'_______uri=/api/v1/posts/1
-2023-05-28T23:38:08.872+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts/1
-2023-05-28T23:38:50.608+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts/1
-2023-05-29T01:12:16.168+0900 ERROR Access Denied_______uri=/api/v1/posts/1
-2023-05-29T01:12:16.387+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts/1
-2023-05-29T01:12:17.065+0900 ERROR Post not found with Id : '1'_______uri=/api/v1/posts/1
-2023-05-29T01:12:17.664+0900 ERROR Category not found with id : '1'_______uri=/api/v1/posts
-2023-05-29T01:12:17.921+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-29T01:12:18.191+0900 ERROR title_______must not be empty
-2023-05-29T01:12:18.696+0900 ERROR description_______must not be empty
-2023-05-29T01:12:18.917+0900 ERROR Access Denied_______uri=/api/v1/posts/1
-2023-05-29T01:12:19.162+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-29T01:12:19.162+0900 ERROR description_______must not be empty
-2023-05-29T01:12:19.234+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
-2023-05-29T01:12:20.006+0900 ERROR content_______must not be empty
-2023-05-29T01:12:20.717+0900 ERROR Post not found with id : '1'_______uri=/api/v1/posts/1
-2023-05-29T01:12:20.779+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts/1
-2023-05-29T01:12:21.016+0900 ERROR Access Denied_______uri=/api/v1/posts
-2023-05-29T01:12:21.263+0900 ERROR Category not found with id : '2'_______uri=/api/v1/posts/1
-2023-05-29T01:12:21.503+0900 ERROR content_______must not be empty
-2023-05-29T01:12:21.734+0900 ERROR title_______must not be empty
-2023-05-29T01:12:21.734+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-29T01:12:21.954+0900 ERROR Post not found with id : '2'_______uri=/api/posts/2
-2023-05-29T01:12:22.182+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-29T01:15:01.920+0900 ERROR Access Denied_______uri=/api/v1/posts/1
-2023-05-29T01:15:02.102+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts/1
-2023-05-29T01:15:02.696+0900 ERROR Post not found with Id : '1'_______uri=/api/v1/posts/1
-2023-05-29T01:15:03.237+0900 ERROR Category not found with id : '1'_______uri=/api/v1/posts
-2023-05-29T01:15:03.466+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-29T01:15:03.708+0900 ERROR title_______must not be empty
-2023-05-29T01:15:04.217+0900 ERROR description_______must not be empty
-2023-05-29T01:15:04.434+0900 ERROR Access Denied_______uri=/api/v1/posts/1
-2023-05-29T01:15:04.667+0900 ERROR description_______Post description must have at least 10 characters
-2023-05-29T01:15:04.668+0900 ERROR description_______must not be empty
-2023-05-29T01:15:04.734+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
-2023-05-29T01:15:05.516+0900 ERROR content_______must not be empty
-2023-05-29T01:15:06.234+0900 ERROR Post not found with id : '1'_______uri=/api/v1/posts/1
-2023-05-29T01:15:06.300+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts/1
-2023-05-29T01:15:06.523+0900 ERROR Access Denied_______uri=/api/v1/posts
-2023-05-29T01:15:06.752+0900 ERROR Category not found with id : '2'_______uri=/api/v1/posts/1
-2023-05-29T01:15:06.993+0900 ERROR content_______must not be empty
-2023-05-29T01:15:07.221+0900 ERROR title_______must not be empty
-2023-05-29T01:15:07.221+0900 ERROR title_______Post title must have at least 4 characters
-2023-05-29T01:15:07.431+0900 ERROR Post not found with id : '2'_______uri=/api/posts/2
-2023-05-29T01:15:07.649+0900 ERROR description_______Post description must have at least 10 characters
+2023-05-29T20:48:30.999+0900 ERROR description_______must not be empty
+2023-05-29T20:48:31.764+0900 ERROR Access Denied_______uri=/api/v1/posts/1
+2023-05-29T20:48:32.618+0900 ERROR description_______must not be empty
+2023-05-29T20:48:32.619+0900 ERROR description_______Post description must have at least 10 characters
+2023-05-29T20:48:32.894+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts
+2023-05-29T20:48:35.155+0900 ERROR content_______must not be empty
+2023-05-29T20:48:36.980+0900 ERROR Post not found with id : '1'_______uri=/api/v1/posts/1
+2023-05-29T20:48:37.314+0900 ERROR An Authentication object was not found in the SecurityContext_______uri=/api/v1/posts/1
+2023-05-29T20:48:37.810+0900 ERROR Access Denied_______uri=/api/v1/posts
+2023-05-29T20:48:38.619+0900 ERROR Category not found with id : '2'_______uri=/api/v1/posts/1
+2023-05-29T20:48:39.612+0900 ERROR content_______must not be empty
+2023-05-29T20:48:40.674+0900 ERROR title_______must not be empty
+2023-05-29T20:48:40.674+0900 ERROR title_______Post title must have at least 4 characters
+2023-05-29T20:48:41.642+0900 ERROR Post not found with id : '2'_______uri=/api/posts/2
+2023-05-29T20:48:42.735+0900 ERROR description_______Post description must have at least 10 characters
